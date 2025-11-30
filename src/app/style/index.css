@@ -1,0 +1,72 @@
+.main-div::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #6bc1f9;
+}
+
+.relative-container {
+  position: relative;
+}
+
+.money-dot::before {
+  content: "";
+  position: absolute;
+  top: -34px;
+  background-color: #6bc1f9;
+  width: 12px;
+  height: 12px;
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.money-dot::after {
+  content: "";
+  position: absolute;
+  top: -39px;
+  left: -5px;
+  padding: 6px;
+  border-radius: 50%;
+  border: 2px solid #6bc1f9;
+  height: 22px;
+  width: 22px;
+  background: white;
+  @apply dark:bg-darklight
+}
+
+.child-container {
+  position: relative;
+}
+
+.history-bg {
+  background: linear-gradient(to right, #f3f9fd 0%, #f3f9fd 64.3%, #BCCFE1 64.3%, #BCCFE1 100%);
+}
+
+@media (min-width: 768px) {
+  .estate-summary-bg {
+    background: linear-gradient(to right, #fff 0%, #fff 50%, #2f73f2 50%, #2f73f2 100%);
+  }
+}
+
+@media (min-width: 768px) {
+  .dark {
+    .estate-summary-bg {
+      background: linear-gradient(to right, #0c121e 0%, #0c121e 50%, #2f73f2 50%, #2f73f2 100%);
+    }
+  }
+}
+
+.dark {
+  .history-bg {
+    background: linear-gradient(to right, #111827 0%, #0e1521 64.3%, #0c121e 64.3%, #0c121e 100%);
+  }
+}
+
+.imageContainer {
+  position: relative;
+  overflow: hidden;
+}
