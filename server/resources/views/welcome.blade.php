@@ -107,7 +107,7 @@
     <!-- ===== Projects End ===== -->
 
     <!-- ===== Counter Start ===== -->
-    <section class="i pg qh rm ji hp">
+    {{-- <section class="i pg qh rm ji hp">
       <img src="images/shape-11.svg" alt="Shape" class="of h ga ha ke" />
       <img src="images/shape-07.svg" alt="Shape" class="h ia o ae jf" />
       <img src="images/shape-14.svg" alt="Shape" class="h ja ka" />
@@ -133,110 +133,63 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> --}}
     <!-- ===== Counter End ===== -->
 
 
     <!-- ===== Blog Start ===== -->
-    <section class="ji gp uq">
-      <!-- Section Title Start -->
-      <div
-        x-data="{ sectionTitle: `Latest Blogs & News`, sectionTitleText: `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.`}">
+<section class="ji gp uq">
+    <!-- Section Title Start -->
+    <div x-data="{ sectionTitle: `Latest Blogs & News`, sectionTitleText: `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.`}">
         <div class="animate_top bb ze rj ki xn vq">
-          <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b">
-          </h2>
-          <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+            <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
+            <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
         </div>
+    </div>
+    <!-- Section Title End -->
 
-
-      </div>
-      <!-- Section Title End -->
-
-      <div class="bb ye ki xn vq jb jo">
+    <div class="bb ye ki xn vq jb jo">
         <div class="wc qf pn xo zf iq">
-          <!-- Blog Item -->
-          <div class="animate_top sg vk rm xm">
-            <div class="c rc i z-1 pg">
-              <img class="w-full" src="images/blog-01.png" alt="Blog" />
 
-              <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
-                <a href="./blog-single.html" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
-              </div>
-            </div>
+            @forelse($blogs as $blog)
+                <div class="animate_top sg vk rm xm">
+                    <div class="c rc i z-1 pg" style="max-height:300px; background-size:cover; object-fit:cover;">
+                        <img class="w-full" 
+                             src="{{ $blog->image ? asset('storage/blog/'.$blog->image) : 'https://via.placeholder.com/400x250/4f46e5/ffffff?text=Blog' }}" 
+                             alt="{{ $blog->title }}" />
 
-            <div class="yh">
-              <div class="tc uf wf ag jq">
-                <div class="tc wf ag">
-                  <img src="images/icon-man.svg" alt="User" />
-                  <p>Musharof Chy</p>
+                        <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
+                            <a href="{{ route('blogs.show', $blog->id) }}" 
+                               class="vc ek rg lk gh sl ml il gi hi">Read More</a>
+                        </div>
+                    </div>
+
+                    <div class="yh">
+                        <div class="tc uf wf ag jq">
+                            <div class="tc wf ag">
+                                <img src="images/icon-man.svg" alt="User" />
+                                <p>{{ $blog->author ?? 'Admin' }}</p>
+                            </div>
+                            <div class="tc wf ag">
+                                <img src="images/icon-calender.svg" alt="Calendar" />
+                                <p>{{ $blog->created_at->format('d M, Y') }}</p>
+                            </div>
+                        </div>
+                        <h4 class="ek tj ml il kk wm xl eq lb">
+                            <a href="{{ route('blogs.show', $blog->id) }}">
+                                {{ Str::limit($blog->title, 60) }}
+                            </a>
+                        </h4>
+                    </div>
                 </div>
-                <div class="tc wf ag">
-                  <img src="images/icon-calender.svg" alt="Calender" />
-                  <p>25 Dec, 2025</p>
-                </div>
-              </div>
-              <h4 class="ek tj ml il kk wm xl eq lb">
-                <a href="blog-single.html">Free advertising for your online business</a>
-              </h4>
-            </div>
-          </div>
+            @empty
+                <p class="text-gray-500">No blogs found.</p>
+            @endforelse
 
-          <!-- Blog Item -->
-          <div class="animate_top sg vk rm xm">
-            <div class="c rc i z-1 pg">
-              <img class="w-full" src="images/blog-02.png" alt="Blog" />
-
-              <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
-                <a href="./blog-single.html" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
-              </div>
-            </div>
-
-            <div class="yh">
-              <div class="tc uf wf ag jq">
-                <div class="tc wf ag">
-                  <img src="images/icon-man.svg" alt="User" />
-                  <p>Musharof Chy</p>
-                </div>
-                <div class="tc wf ag">
-                  <img src="images/icon-calender.svg" alt="Calender" />
-                  <p>25 Dec, 2025</p>
-                </div>
-              </div>
-              <h4 class="ek tj ml il kk wm xl eq lb">
-                <a href="blog-single.html">9 simple ways to improve your design skills</a>
-              </h4>
-            </div>
-          </div>
-
-          <!-- Blog Item -->
-          <div class="animate_top sg vk rm xm">
-            <div class="c rc i z-1 pg">
-              <img class="w-full" src="images/blog-03.png" alt="Blog" />
-
-              <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
-                <a href="./blog-single.html" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
-              </div>
-            </div>
-
-            <div class="yh">
-              <div class="tc uf wf ag jq">
-                <div class="tc wf ag">
-                  <img src="images/icon-man.svg" alt="User" />
-                  <p>Musharof Chy</p>
-                </div>
-                <div class="tc wf ag">
-                  <img src="images/icon-calender.svg" alt="Calender" />
-                  <p>25 Dec, 2025</p>
-                </div>
-              </div>
-              <h4 class="ek tj ml il kk wm xl eq lb">
-                <a href="blog-single.html">Tips to quickly improve your coding speed.</a>
-              </h4>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
+
     <!-- ===== Blog End ===== -->
 
     <!-- ===== Contact Start ===== -->

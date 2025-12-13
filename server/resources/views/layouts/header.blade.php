@@ -3,8 +3,16 @@
     <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
       <div class="vd to/4 tc wf yf">
         <a href="/">
-          <img class="om" src="images/logo-light.svg" alt="Logo Light" />
-          <img class="xc nm" src="images/logo-dark.svg" alt="Logo Dark" />
+ <img class="om"
+     src="images/qatar_logo.png"
+     alt="Logo Light"
+     style="width: 40px; height: auto;" />
+
+<img class="xc nm"
+     src="images/qatar_logo.png"
+     alt="Logo Dark"
+     style="width: 40px; height: auto;" />
+
         </a>
 
         <!-- Hamburger Toggle BTN -->
