@@ -34,8 +34,9 @@
     
     @if($gallery->file_name)
       <div style="position: relative;">
-        <img src="{{ asset('storage/galaray/' . $gallery->file_name) }}" alt="{{ $gallery->title }}"
-             style="width: 100%; height: 256px; object-fit: cover; display: block;" />
+       <img src="{{ asset('galaray/' . $gallery->file_name) }}"
+     alt="{{ $gallery->title }}"
+     style="width: 100%; height: 256px; object-fit: cover; display: block;" />
         <span style="
               position: absolute;
               top: 8px;
